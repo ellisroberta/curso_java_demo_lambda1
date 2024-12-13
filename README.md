@@ -119,3 +119,27 @@ permitindo que o foco permaneça na lógica de comparação.
 entender, já que o comportamento da expressão está tudo em uma linha.
 
 ## Comparator expressão lambda "direto no argumento"
+
+* Classe **Program**: A classe contém o método main, que é o ponto de entrada do programa. Dentro deste método, uma lista
+de produtos é criada, produtos são adicionados a essa lista e a lista é ordenada utilizando uma expressão lambda diretamente como argumento.
+
+* Lista de Produtos:
+  * Uma instância de ArrayList<Product> é criada para armazenar os produtos.
+  * Produtos como "TV", "Notebook" e "Tablet" são adicionados à lista, cada um com seu respectivo preço.
+
+* Ordenação da Lista Usando Expressão Lambda Direto no Argumento:
+  * A lista é ordenada utilizando o método sort, onde uma expressão lambda é passada diretamente como argumento.
+  * A expressão lambda (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()) define a lógica de comparação entre dois produtos p1 e p2.
+  * A comparação é feita com base nos nomes dos produtos, ignorando a diferença entre maiúsculas e minúsculas, utilizando toUpperCase().
+
+* Impressão dos Produtos:
+  * Após a ordenação, um loop for é utilizado para imprimir cada produto na lista, garantindo que eles estejam exibidos
+na ordem correta, conforme definido pela lógica de comparação.
+
+### Vantagens de Usar Expressões Lambda "Direto no Argumento"
+
+* Simplicidade: Essa abordagem é útil para casos onde a lógica de comparação é simples e não requer múltiplas instruções. 
+  A expressão pode ser facilmente escrita em uma única linha.
+* Menos Código: Evita a necessidade de criar uma classe separada ou uma variável intermediária para o comparador, reduzindo o código e mantendo-o mais limpo.
+* Clareza: Para quem lê o código, fica claro que a ordenação está sendo feita com base em uma lógica específica, sem a
+necessidade de se referir a uma classe ou variável externa, tornando o código mais autoexplicativo.

@@ -29,3 +29,31 @@ que a comparação não seja sensível a maiúsculas/minúsculas.
 mudar (por exemplo, se quisermos comparar produtos pelo preço em vez do nome). Isso segue o princípio de design aberto/fechado,
 onde a classe é aberta para extensão (novos comparadores) mas fechada para modificação.
 * Uso do Método sort: O método sort da lista permite ordenar os produtos de maneira flexível, utilizando diferentes implementações de Comparator.
+
+## Comparator objeto de classe anônima
+
+* Classe **Program**: Esta classe contém o método main, que é o ponto de entrada do programa.
+Aqui, é criada uma lista de produtos, produtos são adicionados a essa lista e a lista é ordenada utilizando um comparador definido como uma classe anônima.
+
+* Lista de Produtos:
+  * Uma instância de ArrayList<Product> é criada para armazenar os produtos. 
+  * Produtos como "TV", "Notebook" e "Tablet" são adicionados à lista, cada um com seu respectivo preço.
+
+* Classe Anônima para Comparator:
+    * Um objeto Comparator<Product> é criado usando uma classe anônima. Isso significa que a implementação do comparador 
+é definida na própria declaração do objeto, sem a necessidade de criar uma nova classe separada. 
+    * O método compare é sobrescrito para definir a lógica de comparação, que aqui compara os nomes dos produtos convertidos para maiúsculas. 
+Isso garante que a comparação não seja sensível a maiúsculas/minúsculas.
+
+* Ordenação da Lista:
+  * A lista é ordenada utilizando o método sort, passando o comparador (comp) como argumento. Isso aplica a lógica de comparação definida na classe anônima.
+
+* Impressão dos Produtos:
+    * Após a ordenação, um loop for é utilizado para imprimir cada produto na lista, garantindo que eles estejam exibidos 
+na ordem correta, conforme definido pela lógica do comparador.
+
+### Vantagens de Usar Classes Anônimas
+* Conveniente: Classes anônimas são úteis para criar implementações rápidas de interfaces ou classes abstratas que não 
+precisam ser reutilizadas em outros lugares, tornando o código mais conciso.
+
+* Escopo Local: O comparador é definido dentro do método main, o que significa que ele é local ao método e não polui o escopo global da classe Program.

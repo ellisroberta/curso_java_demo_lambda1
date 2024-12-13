@@ -57,3 +57,36 @@ na ordem correta, conforme definido pela lógica do comparador.
 precisam ser reutilizadas em outros lugares, tornando o código mais conciso.
 
 * Escopo Local: O comparador é definido dentro do método main, o que significa que ele é local ao método e não polui o escopo global da classe Program.
+
+## Comparator objeto de expressão lambda com chaves
+
+* Classe **Program**: Esta classe contém o método main, que é o ponto de entrada do programa. Aqui, uma lista de produtos
+é criada, produtos são adicionados a essa lista e a lista é ordenada utilizando um comparador definido como uma expressão lambda.
+
+* Lista de Produtos:
+  * Uma instância de ArrayList<Product> é criada para armazenar os produtos.
+  * Produtos como "TV", "Notebook" e "Tablet" são adicionados à lista, cada um com seu respectivo preço.
+
+* Expressão Lambda para Comparator:
+  * Um objeto Comparator<Product> é criado utilizando uma expressão lambda, que é uma forma concisa de implementar interfaces funcionais.
+  * A expressão lambda (p1, p2) -> { ... } define a lógica de comparação entre dois produtos (p1 e p2). As chaves são usadas
+para delimitar o corpo da expressão, permitindo que múltiplas linhas de código sejam incluídas se necessário.
+  * O método compare compara os nomes dos produtos, utilizando toUpperCase() para garantir que a comparação não seja sensível a maiúsculas/minúsculas.
+
+* Ordenação da Lista:
+  * A lista é ordenada utilizando o método sort, passando o comparador (comp) como argumento. Isso aplica a lógica de comparação definida na expressão lambda.
+
+* Impressão dos Produtos:
+  * Após a ordenação, um loop for é utilizado para imprimir cada produto na lista, garantindo que eles estejam exibidos na ordem correta, conforme definido pela lógica do comparador.
+
+### Vantagens de Usar Expressões Lambda
+* Sintaxe Concisa: As expressões lambda permitem uma sintaxe mais curta e mais legível ao implementar interfaces funcionais, 
+como Comparator, sem a necessidade de criar classes anônimas.
+* Foco na Lógica: Ao usar uma expressão lambda, o foco é diretamente na lógica de comparação, tornando o código mais claro e fácil de entender.
+* Flexibilidade: As expressões lambda podem ser usadas em qualquer lugar que uma interface funcional seja esperada,
+proporcionando flexibilidade na implementação de comportamentos.
+
+## Comparator objeto de expressão lambda sem chaves
+
+
+## Comparator expressão lambda "direto no argumento"

@@ -77,9 +77,10 @@ para delimitar o corpo da expressão, permitindo que múltiplas linhas de códig
   * A lista é ordenada utilizando o método sort, passando o comparador (comp) como argumento. Isso aplica a lógica de comparação definida na expressão lambda.
 
 * Impressão dos Produtos:
-  * Após a ordenação, um loop for é utilizado para imprimir cada produto na lista, garantindo que eles estejam exibidos na ordem correta, conforme definido pela lógica do comparador.
+  * Após a ordenação, um loop for é utilizado para imprimir cada produto na lista, garantindo que eles estejam exibidos na ordem correta,
+conforme definido pela lógica do comparador.
 
-### Vantagens de Usar Expressões Lambda
+### Vantagens de Usar Expressões Lambda com Chaves
 * Sintaxe Concisa: As expressões lambda permitem uma sintaxe mais curta e mais legível ao implementar interfaces funcionais, 
 como Comparator, sem a necessidade de criar classes anônimas.
 * Foco na Lógica: Ao usar uma expressão lambda, o foco é diretamente na lógica de comparação, tornando o código mais claro e fácil de entender.
@@ -88,5 +89,33 @@ proporcionando flexibilidade na implementação de comportamentos.
 
 ## Comparator objeto de expressão lambda sem chaves
 
+* Classe **Program**: Esta classe contém o método main, que é o ponto de entrada do programa. Aqui, uma lista de produtos
+  é criada, produtos são adicionados a essa lista e a lista é ordenada utilizando um comparador definido como uma expressão lambda.
+
+* Lista de Produtos:
+  * Uma instância de ArrayList<Product> é criada para armazenar os produtos.
+  * Produtos como "TV", "Notebook" e "Tablet" são adicionados à lista, cada um com seu respectivo preço.
+
+* Expressão Lambda para Comparator:
+  * Um objeto Comparator<Product> é criado utilizando uma expressão lambda sem chaves.
+  * A expressão lambda é definida como (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()).
+  Nesse caso, a lógica de comparação é escrita em uma única linha, o que é possível porque não há necessidade de um bloco de código com múltiplas instruções.
+  * A comparação dos nomes dos produtos é feita de forma a ignorar diferenças de maiúsculas e minúsculas, utilizando o método toUpperCase().
+
+* Ordenação da Lista:
+  * A lista é ordenada utilizando o método sort, passando o comparador (comp) como argumento. Isso aplica a lógica de comparação definida na expressão lambda.
+
+* Impressão dos Produtos:
+  * Após a ordenação, um loop for é utilizado para imprimir cada produto na lista, garantindo que eles estejam exibidos na ordem correta,
+    conforme definido pela lógica do comparador.
+
+### Vantagens de Usar Expressões Lambda sem Chaves
+
+* Sintaxe Mais Limpa: Ao usar expressões lambda sem chaves, o código se torna mais conciso e fácil de ler, especialmente
+quando a lógica é simples e pode ser expressa em uma única linha.
+* Redução de Verbosidade: Eliminar as chaves e o comando return (quando não necessário) reduz a verbosidade do código,
+permitindo que o foco permaneça na lógica de comparação.
+* Facilidade de Entendimento: Para expressões simples, a ausência de chaves pode tornar o código mais direto e fácil de 
+entender, já que o comportamento da expressão está tudo em uma linha.
 
 ## Comparator expressão lambda "direto no argumento"
